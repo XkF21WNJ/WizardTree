@@ -2,7 +2,7 @@
 
 ## Link
 
-[Go to the story](http://htmlpreview.github.com/?https://github.com/XkF21WNJ/WizardTree/blob/master/WizardTree.html)
+[Read the story](http://htmlpreview.github.com/?https://github.com/XkF21WNJ/WizardTree/blob/master/WizardTree.html)
 
 ## Description
 
