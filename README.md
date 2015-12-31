@@ -2,11 +2,11 @@
 
 ## Description
 
-Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses Jupyter notbook, on python 2.7 (python 3 might also work, but hasn't been test).
+Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses Jupyter notbook, on python 2.7 (python 3 might also work, but hasn't been tested).
 
 ## Instructions
 
-Install your favorite python distribution, and add the packages: jupyter, praw, html, json. After that open the notebook and follow the instructions to generate the .json and .html files.
+Install your favourite python distribution, and add the packages: jupyter, praw, html, json. After that open the notebook and follow the instructions to generate the .json and .html files.
 
 More details to come.
 
