@@ -4,7 +4,7 @@
 
 ## Project Description
 
-Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses Jupyter notbook, on python 2.7 (python 3 might also work, but hasn't been tested).
+Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses the Jupyter IPython notebook, on python 2.7 (python 3 might also work, but hasn't been tested).
 
 ## Instructions
 
