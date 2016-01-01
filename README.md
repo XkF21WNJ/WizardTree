@@ -1,6 +1,6 @@
 # WizardTree
 
-[Jump to the story](https://XkF21WNJ.github.io/WizardTree/)
+[Read the tale](https://XkF21WNJ.github.io/WizardTree/)
 
 ## Project Description
 
