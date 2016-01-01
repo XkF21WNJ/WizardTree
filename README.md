@@ -1,12 +1,10 @@
 # WizardTree
 
-## Link
+[Read the tale](https://XkF21WNJ.github.io/WizardTree/)
 
-[Read the story](http://htmlpreview.github.com/?https://github.com/XkF21WNJ/WizardTree/blob/master/WizardTree.html)
+## Project Description
 
-## Description
-
-Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses Jupyter notbook, on python 2.7 (python 3 might also work, but hasn't been tested).
+Crawls the tales of /u/XiuathoTheWizard and compiles them into easier to handle formats (json and html). Uses the Jupyter IPython notebook, on python 2.7 (python 3 might also work, but hasn't been tested).
 
 ## Instructions
 
