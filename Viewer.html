@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>XiuathoTheWizard's Epic Quest.</title>
+		<style>
+		    body {
+		        font-family: arial, sans-serif;
+		        width: 40em;
+		        margin-left:auto;
+		        margin-right:auto;
+		    }
+		    
+		    p {
+		        text-align: justiy;
+		        -moz-hyphens: auto;
+		        hyphens: auto;
+		    }
+		    
+		    #event-body {
+		        font-family: Georgia, serif;
+		        font-size: larger;
+		        line-height: 1.5em;
+		    }
+
+		    #action-list {
+		        font-family: consolas, monospace;
+		        margin: 0 0 2ex 0;
+		    }
+		    
+			#action-list p {
+		        margin-top: 0.25em;
+		        margin-bottom: 0.25em;
+		    }
+		    
+			#action-list > li > a {
+				display: block;
+		    }
+		    
+		    .link-container {
+		        font-family: consolas, monospace;
+		        display: flex;
+		    }
+		    
+		    #left-link{
+		        width: 20em;
+		    }
+		    
+		    #right-link{
+		        flex-grow: 1;
+		        text-align: right;
+		    }
+		</style>
+
+		<script type="text/javascript">
+			function onLoad() {
+				eventBody = document.getElementById("event-body");
+				actionList = document.getElementById("action-list");
+				leftLink = document.getElementById("left-link");
+				rightLink = document.getElementById("right-link");
+
+				loadJson( function(json) {
+					story = json;
+					OnJsonLoad();
+				})
+			}
+
+			function loadJson(callback) {   
+			    var request = new XMLHttpRequest();
+			    request.overrideMimeType("application/json");
+			    request.open('GET', 'Output/WizardTree.json', true);
+			    request.onreadystatechange = function () {
+					if (request.readyState == XMLHttpRequest.DONE && request.status == 200)
+        				callback(JSON.parse(request.responseText));
+			    }
+			    request.send(null);
+			}
+
+			function OnJsonLoad() {
+				if ("onhashchange" in window) { // event supported?
+				    window.onhashchange = function () {
+				        HashChanged();
+				    }
+				}
+				else { // event not supported:
+				    var storedHash = window.location.hash;
+				    window.setInterval(function () {
+				        if (window.location.hash != storedHash) {
+				            storedHash = window.location.hash;
+				            HashChanged();
+				        }
+				    }, 100);
+				}
+
+				events = story['events'];
+				actions = story['actions'];
+
+				HashChanged();
+			}
+
+			function HashChanged() {
+				var hash = window.location.hash;
+				currentEvent = hash.substring(1);
+				if (currentEvent == "") currentEvent = story['start'];
+
+				LoadStory();
+			}
+
+			function LoadStory() {
+				var event = events[currentEvent];
+
+				eventBody.innerHTML = event['description'];
+				actionList.innerHTML = "";
+				window.scrollTo(0,0);
+
+				leftLink.href = '#' + event['parent'];
+				rightLink.href = event['url'];
+
+				for (var action_id of event['actions']) {
+					var action = actions[action_id];
+					var entry = document.createElement('span');
+					var link = document.createElement('a');
+					var item = document.createElement('li');
+
+					entry.innerHTML = action['description'];
+					link.href = '#' + action['consequence'];
+
+					link.appendChild(entry);
+					item.appendChild(link);
+					actionList.appendChild(item);
+				}
+			}
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<div class="event">
+			<div class="link-container">
+				<a href="" id="left-link">Go to Previous</a>
+				<a href="" id="right-link">Go to Original</a>
+			</div>
+			<div id="event-body"></div>
+			<ul id="action-list"></ul>
+		</div>
+	</body>
+</html>
