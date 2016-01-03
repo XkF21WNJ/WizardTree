@@ -37,7 +37,7 @@ Not yet sure how to generate Pdf's from json files, but it's technically possibl
 
 ## Contributing
 
-Yes please! Just fork the repository and add a pull request to merge your changes. The project has only just started, and there are lots of things that could be improved, so any help would be appreciated.
+Yes please! Just fork the repository and add a pull request to merge your changes. The project has only just started, and there are lots of things that could be improved, so any help is appreciated.
 
 ## Credits
 
