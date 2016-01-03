@@ -18,7 +18,7 @@ Currently most functionality can be found in the 'WizardCrawler.ipynb' file. To 
 
 The code also requires some other python packages, depending on what part of the code you'll want to use. Currently used packages include: praw, html, json, markdown.
 
-The generated .json files contain a list of all events and possible actions indexed by their comment id. This layout makes it easy to generate choose your own adventure style stories in various formats. As an example 'WizardCrawler.ipynb' can convert the json file to a single fixed html, and 'Viewer.html' canget a similar result by loading the json directly in the browser.
+The generated .json files contain a list of all events and possible actions indexed by their comment id. This layout makes it easy to generate 'choose your own adventure'-style stories in various formats. As an example 'WizardCrawler.ipynb' can convert the json file to a single fixed html, and 'Viewer.html' canget a similar result by loading the json directly in the browser.
 
 ## Goals
 
