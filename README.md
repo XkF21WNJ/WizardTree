@@ -6,9 +6,9 @@
 
 ## Project Description and History
 
-The goal of this project is to convert 'choose your own adventure'-style comment chains that sometimes appear on reddit (e.g. /r/ playzorkwithme and /r/YouEnterADungeon) into easier to handle formats.
+The goal of this project is to convert 'choose your own adventure'-style comment chains that sometimes appear on reddit (such as on /r/playzorkwithme and /r/YouEnterADungeon) into easier to handle formats.
 
-The motivation behind this project was the tale of /u/XiuathoTheWizard, which spontaneously grew from [this comment](https://www.reddit.com/r/talesfromtechsupport/comments/3xyesc/project_management_seems_a_lot_like_cooking_a/cy8z5uv) on the subreddit /r/TalesFromTechSupport.  Since it is hard to navigate comment chains of that size on reddit this project was started to attempt compile the tale it into a more manageable format.
+The inspiration for this project was the tale of /u/XiuathoTheWizard, which spontaneously grew from [this comment](https://www.reddit.com/r/talesfromtechsupport/comments/3xyesc/project_management_seems_a_lot_like_cooking_a/cy8z5uv) on the subreddit /r/TalesFromTechSupport.  Since it is hard to navigate comment chains of that size on reddit this project was started to compile the tale it into a more manageable format.
 
 Current formats include HTML and JSON, but other formats should be possible, and can hopefully be added soon.
 
@@ -30,14 +30,14 @@ Apart from that it would also be nice to have a broader range of formats and to 
 This would basically just be an extension of the currently available HTML version, adding whatever information epubs need and repackaging it into the right format. Since epubs are essentially HTML files in a zip file this should be relatively easy to do (famous last words). Once this is available the static HTML format can be deprecated, the dynamic HTML viewer is more flexible and epubs are better as a static format.
 
 - [Twine](http://twinery.org/)  
-I've only encountered this recently but the language does seem to add support for scripting so with any luck it's possible to make it load the JSON file directly, similar to how the currently available [HTML viewer](https://XkF21WNJ.github.io/WizardTree/Viewer.html) does it.
+Haven't had much experience with this language but they do claim to add support for scripting so with any luck it's possible to make it load the JSON file directly, similar to how the currently available [HTML viewer](https://XkF21WNJ.github.io/WizardTree/Viewer.html) does it.
 
 - Pdf  
 Not yet sure how to generate Pdf's from JSON files, but it's technically possible. Maybe there's a python package that can be used for that. Of course, things like epubs and HTML files can be converted to pdf, but it's usually better to generate them directly.
 
 ## Contributing
 
-Yes please! Just fork the repository and add a pull request to merge your changes. The project has only just started, and there are lots of things that could be improved, so any help is appreciated.
+Yes please! Just fork the repository and add a pull request to merge your changes. The project has only just started, and there are lots of things that could be improved, so all help is appreciated.
 
 ## Credits
 
