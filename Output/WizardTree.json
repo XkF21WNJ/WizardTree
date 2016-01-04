@@ -1,6 +1,7 @@
 {
+    "title": "Project Management seems a lot like cooking a banquet.", 
+    "url": "https://www.reddit.com/r/talesfromtechsupport/comments/3xyesc/project_management_seems_a_lot_like_cooking_a/cy8z5uv", 
     "author": "XiuathoTheWizard", 
-    "url": "https://www.reddit.com/r/talesfromtechsupport/comments/3xyesc/project_management_seems_a_lot_like_cooking_a/", 
     "actions": {
         "cyef7eu": {
             "consequence": "cyewvx2", 
@@ -2426,7 +2427,7 @@
             "actions": []
         }, 
         "cy8z5uv": {
-            "parent": "", 
+            "parent": null, 
             "url": "https://www.reddit.com/r/talesfromtechsupport/comments/3xyesc/project_management_seems_a_lot_like_cooking_a/cy8z5uv", 
             "description": "<p><em>It is with trembling hands that you pick up the phone. You don't really have to; you already know what they will say. This is the fourth time in one hour that they call you about the database rights. \"Do we have access yet?\" they beg into the handset. \"We need you to grant access yesterday.\" You are tired of their begging. You wish you could make them stop. And at that very moment, a massive feeling of drowsiness hits you, and you promptly fall asleep.</em></p>\n<p><em>You don't know for how long you slept. All you know is that now it is dark outside, and you can't seem to recall where you are or how you got there. Sitting by a desk, you decide to look around, and it is with horror that you discover management circled around you, and fearing the worst, you decide against speaking. You merely acknowledge your wakefulness. The developer team's project leader speaks first, followed by your boss and the rest of management. You don't listen to much of what they say. However, one thing strikes your attention. For some reason, in some way, you have manage to finish off where the development team started.</em></p>", 
             "actions": [
