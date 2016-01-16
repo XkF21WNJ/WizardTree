@@ -59,16 +59,18 @@
 				leftLink = document.getElementById("left-link");
 				rightLink = document.getElementById("right-link");
 
-				loadJson( function(json) {
+				var storyLoc = location.search.split('story=')[1];
+				if (storyLoc == undefined) storyLoc = 'Output/WizardTree.json';
+				loadJson(storyLoc, function(json) {
 					story = json;
 					OnJsonLoad();
 				})
 			}
 
-			function loadJson(callback) {   
+			function loadJson(location, callback) {   
 			    var request = new XMLHttpRequest();
 			    request.overrideMimeType("application/json");
-			    request.open('GET', 'Output/WizardTree.json', true);
+			    request.open('GET', location, true);
 			    request.onreadystatechange = function () {
 					if (request.readyState == XMLHttpRequest.DONE && request.status == 200)
         				callback(JSON.parse(request.responseText));
@@ -114,7 +116,14 @@
 				actionList.innerHTML = "";
 				window.scrollTo(0,0);
 
-				leftLink.href = '#' + event['parent'];
+				if (event['parent'] != null){
+					leftLink.href = '#' + event['parent'];
+					leftLink.style.visibility = 'visible';
+				} else {
+					leftLink.href = "";
+					leftLink.style.visibility = 'hidden';
+				}
+
 				rightLink.href = event['url'];
 
 				for (var action_id of event['actions']) {
