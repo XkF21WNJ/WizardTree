@@ -58,30 +58,39 @@
 				actionList = document.getElementById("action-list");
 				leftLink = document.getElementById("left-link");
 				rightLink = document.getElementById("right-link");
+				storyPath = document.getElementById("story-path");
 
 				var storyLoc = location.search.split('story=')[1];
-				if (storyLoc == undefined) storyLoc = 'Output/WizardTree.json';
-				loadJson(storyLoc, function(json) {
-					story = json;
-					OnJsonLoad();
-				})
+				if (storyLoc != undefined) loadURL(storyLoc);
 			}
 
-			function loadJson(location, callback) {   
+			function loadURL(location, callback) {   
 			    var request = new XMLHttpRequest();
 			    request.overrideMimeType("application/json");
 			    request.open('GET', location, true);
 			    request.onreadystatechange = function () {
-					if (request.readyState == XMLHttpRequest.DONE && request.status == 200)
-        				callback(JSON.parse(request.responseText));
+					if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+        				story = JSON.parse(request.responseText);
+						onStoryLoad();
+					}
 			    }
 			    request.send(null);
 			}
 
-			function OnJsonLoad() {
+			function loadFile() {
+				var reader = new FileReader();
+				reader.onload = function(e) { 
+	      			story = JSON.parse(e.target.result);
+	      			onStoryLoad();
+        		};
+
+				reader.readAsText(storyPath.files[0]);
+			}
+
+			function onStoryLoad() {
 				if ("onhashchange" in window) { // event supported?
 				    window.onhashchange = function () {
-				        HashChanged();
+				        hashChanged();
 				    }
 				}
 				else { // event not supported:
@@ -89,7 +98,7 @@
 				    window.setInterval(function () {
 				        if (window.location.hash != storedHash) {
 				            storedHash = window.location.hash;
-				            HashChanged();
+				            hashChanged();
 				        }
 				    }, 100);
 				}
@@ -98,18 +107,18 @@
 				actions = story['actions'];
 				document.title = story['title']
 
-				HashChanged();
+				hashChanged();
 			}
 
-			function HashChanged() {
+			function hashChanged() {
 				var hash = window.location.hash;
 				currentEvent = hash.substring(1);
 				if (currentEvent == "") currentEvent = story['start'];
 
-				LoadStory();
+				refreshStory();
 			}
 
-			function LoadStory() {
+			function refreshStory() {
 				var event = events[currentEvent];
 
 				eventBody.innerHTML = event['description'];
@@ -148,7 +157,10 @@
 				<a href="" id="left-link">Go to Previous</a>
 				<a href="" id="right-link">Go to Original</a>
 			</div>
-			<div id="event-body"><p style = "text-align: center">Loading...</p></div>
+			<div id="event-body">
+				<input id="story-path" type="file" style = "text-align: center">
+				<button onclick="loadFile()">Load</button>
+			</div>
 			<ul id="action-list"></ul>
 		</div>
 	</body>
