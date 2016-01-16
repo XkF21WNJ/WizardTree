@@ -64,7 +64,7 @@
 				if (storyLoc != undefined) loadURL(storyLoc);
 			}
 
-			function loadURL(location, callback) {   
+			function loadURL(location) {   
 			    var request = new XMLHttpRequest();
 			    request.overrideMimeType("application/json");
 			    request.open('GET', location, true);
