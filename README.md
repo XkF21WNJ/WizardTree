@@ -14,9 +14,7 @@ Current formats include HTML and JSON, but other formats should be possible, and
 
 ## Instructions
 
-Currently most functionality can be found in the 'WizardCrawler.ipynb' file. To run this file you'll need a python distribution (2.7, although 3+ might also work). And to open the notebook you'll need to use the [Jupyter](http://jupyter.org/) package. 
-
-The code also requires some other python packages, depending on what part of the code you'll want to use. Currently used packages include: praw, HTML, JSON, markdown.
+For a basic tutorial see the "tutorial.ipynb" file. To run the notebook you'll need to use the [Jupyter](http://jupyter.org/) package, but you can also copy the python code and run it directly.
 
 The generated JSON files contain a list of all events and possible actions indexed by their comment id. This layout makes it easy to generate 'choose your own adventure'-style stories in various formats. For example 'WizardCrawler.ipynb' can convert the JSON file to a stand-alone HTML file, and 'Viewer.html' can be used to get a similar result by loading the JSON directly in the browser.
 
